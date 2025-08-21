@@ -48,7 +48,10 @@
                             <xsl:value-of select="local-name()"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of select="normalize-space(replace(.,'&#13;&#10;','<br/>'))"/>
+                            <xsl:for-each select="tokenize(.,'\n')">
+                                <xsl:value-of select="."/>
+                                <br/>
+                            </xsl:for-each>
                         </xsl:otherwise>
                     </xsl:choose>
                 </div>

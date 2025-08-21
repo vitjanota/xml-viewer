@@ -41,3 +41,11 @@ Stylesheet compilation time: 0.07s
 [0m[31merror[0m[2m:[0m [1mScript not found "[1mindes.ts[0m"
 [1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004hbun run indes.ts.ts x.ts[?2004l
 listening 4280
+^C
+[1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004hbun run index.tss[3C[8Dbuild   [?2004l
+[0m[31merror[0m[2m:[0m [1mScript not found "[1mbuild[0m"
+[1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004hbun run build[?2004l
+[0m[31merror[0m[2m:[0m [1mScript not found "[1mbuild[0m"
+[1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004hbbun run build[?2004l
+[0m[31merror[0m[2m:[0m [1mScript not found "[1mbuild[0m"
+[1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004h
