@@ -48,7 +48,7 @@
                     </xsl:attribute>
                     <xsl:choose>
                         <xsl:when test="self::*">
-                            <xsl:value-of select="local-name()"/>
+                            <xsl:value-of select="name()"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:for-each select="tokenize(.,'\n')">
