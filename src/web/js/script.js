@@ -18,18 +18,18 @@ checkXML = () => {
     } 
 }
 
-// display xml tree if fancy mode
+// display xml tree in fancy mode
 displayTree = async (xml) =>{
     const xslfile = await fetch(`${window.origin}/xsl/tree.sef.json`);
     const xsl = JSON.parse(await xslfile.text());
     SaxonJS.transform(
-    {
-        stylesheetInternal: xsl,
-        sourceText: xml,
-        destination: 'serialized',
-    },
-    'async',
-  ).then((output) => {
-    document.getElementById('treearea').innerHTML = output.principalResult.toString().trim();
-  });
+        {
+            stylesheetInternal: xsl,
+            sourceText: xml,
+            destination: 'serialized',
+        },
+        'async',
+    ).then((output) => {
+        document.getElementById('treearea').innerHTML = output.principalResult.toString().trim();
+    });
 }
