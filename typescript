@@ -1,0 +1,43 @@
+Script started on Thu Aug 21 15:36:37 2025
+[1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004hbun run ./index.ts[18D                  [18Dsscript/co[1C[1C[1C[1C[1C[1C       s srs      ssrc/script/compile.sh[?2004l
+[0m[31merror[0m[2m:[0m [1mModule not found "../../node_modules/xslt3/xslt3.js"[0m
+[1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004hsrc/script/compile.sh[?2004l
+[0m[31mSaxonJS 2.7 from Saxonica [0m
+[0m[31mNode.js version v22.3.0[0m
+[0m[31mError FORG0001
+  Cannot locate stylesheet (No such file or directory)[0m
+[1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004hsrc/script/compile.sh[?2004l
+[0m[31mSaxonJS 2.7 from Saxonica [0m
+[0m[31mNode.js version v22.3.0[0m
+[0m[31mCompiling stylesheet /Users/vitek/Sites/xml-viewer/src/xsl/tree.xsl[0m
+Stylesheet compilation time: 0.069s
+[0m[31mStylesheet exported to SEF file /Users/vitek/Sites/xml-viewer/src/web/xsl/tree.sef.json[0m
+[1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004hbbun build[?2004l
+[0m[1mbun build [0m[2mv1.1.18 (5a0b9352)[0m
+[0m[31merror: Missing entrypoints. What would you like to bundle?[0m
+
+Usage:
+  [2m$[0m [1m[32mbun build[0m <entrypoint> [...<entrypoints>] [36m[...flags][0m  
+
+To see full documentation:
+  [2m$[0m [1m[32mbun build[0m --help
+[1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004hbbun run build[?2004l
+[0m[31merror[0m[2m:[0m [1mScript not found "[1mbuild[0m"
+[1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004hbun run build[?2004l
+[0m[2m[35m$[0m [2m[1msrc/script/compile.sh[0m
+[0m[31mSaxonJS 2.7 from Saxonica [0m
+[0m[31mNode.js version v22.3.0[0m
+[0m[31mCompiling stylesheet /Users/vitek/Sites/xml-viewer/src/xsl/tree.xsl[0m
+Stylesheet compilation time: 0.069s
+[0m[31mStylesheet exported to SEF file /Users/vitek/Sites/xml-viewer/src/web/xsl/tree.sef.json[0m
+[1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004hbun run build[?2004l
+[0m[2m[35m$[0m [2m[1msrc/scripts/compile.sh[0m
+[0m[31mSaxonJS 2.7 from Saxonica [0m
+[0m[31mNode.js version v22.3.0[0m
+[0m[31mCompiling stylesheet /Users/vitek/Sites/xml-viewer/src/xsl/tree.xsl[0m
+Stylesheet compilation time: 0.07s
+[0m[31mStylesheet exported to SEF file /Users/vitek/Sites/xml-viewer/src/web/xsl/tree.sef.json[0m
+[1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004hbbun run indes.ys  ts[?2004l
+[0m[31merror[0m[2m:[0m [1mScript not found "[1mindes.ts[0m"
+[1m[7m%[27m[1m[0m                                                                                                                                                                       [0m[27m[24m[Jvitek@Vit--MacBook-Pro xml-viewer % [K[?2004hbun run indes.ts.ts x.ts[?2004l
+listening 4280
