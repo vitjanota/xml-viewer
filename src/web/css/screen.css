@@ -79,6 +79,11 @@ footer {
   margin: 0 10px 0 0;
 }
 
+.rootNodeWrapper {
+  border-top: 1px solid black;
+  padding: 0 10px 0 0;
+}
+
 .generalNodeWrapper {
   border-top: 1px solid black;
   padding: 0 10px 0 10px;

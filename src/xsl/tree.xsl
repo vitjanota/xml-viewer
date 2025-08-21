@@ -18,6 +18,9 @@
             <div>
                 <xsl:attribute name="class">
                     <xsl:choose>
+                        <xsl:when test="not(ancestor::*)">
+                            <xsl:text>rootNodeWrapper</xsl:text>
+                        </xsl:when>
                         <xsl:when test="(following-sibling::* or following-sibling::text()[normalize-space(.) != '']) and not(*)">
                             <xsl:text>lastLeafNodeWrapper</xsl:text>
                         </xsl:when>
