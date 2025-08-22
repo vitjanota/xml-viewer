@@ -49,6 +49,9 @@
                     <xsl:choose>
                         <xsl:when test="self::*">
                             <xsl:value-of select="name()"/>
+                            <xsl:for-each select="@*">
+                                <div><xsl:value-of select="concat(name(),': ',.)"/></div>
+                            </xsl:for-each>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:for-each select="tokenize(.,'\n')">
