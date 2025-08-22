@@ -48,10 +48,17 @@
                     </xsl:attribute>
                     <xsl:choose>
                         <xsl:when test="self::*">
-                            <xsl:value-of select="name()"/>
-                            <xsl:for-each select="@*">
-                                <div><xsl:value-of select="concat(name(),': ',.)"/></div>
-                            </xsl:for-each>
+                            <div class="elementNodeName">
+                                <xsl:value-of select="name()"/>
+                            </div>
+                            <div class="elementNodeAttributes">
+                                <xsl:for-each select="@*">
+                                    <div>
+                                        <xsl:value-of select="concat(name(),': ')"/>
+                                        <i><xsl:value-of select="."/></i>
+                                    </div>
+                                </xsl:for-each>
+                            </div>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:for-each select="tokenize(.,'\n')">
