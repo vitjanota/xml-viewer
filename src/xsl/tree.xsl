@@ -13,7 +13,7 @@
     </xsl:template>
 
     <!-- ==================== node processing ==================== -->
-    <xsl:template match="*|text()[normalize-space(.) != '']">
+    <xsl:template match="*|text()[normalize-space(.) != '']|processing-instruction()|comment()">
         <div class="nodeArea">
             <div>
                 <xsl:attribute name="class">
@@ -21,10 +21,10 @@
                         <xsl:when test="not(ancestor::*)">
                             <xsl:text>rootNodeWrapper</xsl:text>
                         </xsl:when>
-                        <xsl:when test="(following-sibling::* or following-sibling::text()[normalize-space(.) != '']) and not(*)">
+                        <xsl:when test="(following-sibling::* or following-sibling::text()[normalize-space(.) != ''] or following-sibling::processing-instruction() or following-sibling::comment()) and not(*)">
                             <xsl:text>lastLeafNodeWrapper</xsl:text>
                         </xsl:when>
-                        <xsl:when test="following-sibling::* or following-sibling::text()[normalize-space(.) != '']">
+                        <xsl:when test="following-sibling::* or following-sibling::text()[normalize-space(.) != ''] or following-sibling::processing-instruction() or following-sibling::comment()">
                             <xsl:text>lastNodeWrapper</xsl:text>
                         </xsl:when>
                         <xsl:when test="not(*)">
@@ -40,6 +40,12 @@
                         <xsl:choose>
                             <xsl:when test="self::*">
                                 <xsl:text>elementNode</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="self::processing-instruction()">
+                                <xsl:text>piNode</xsl:text>
+                            </xsl:when>
+                             <xsl:when test="self::comment()">
+                                <xsl:text>commentNode</xsl:text>
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:text>textNode</xsl:text>
@@ -60,6 +66,20 @@
                                 </xsl:for-each>
                             </div>
                         </xsl:when>
+                        <xsl:when test="self::processing-instruction()">
+                            <div class="piNodeName">
+                                <xsl:value-of select="name()"/>
+                            </div>
+                            <div class="piNodeValue">
+                                <xsl:for-each select="tokenize(.,'\n')">
+                                    <xsl:value-of select="."/>
+                                    <br/>
+                                </xsl:for-each>
+                            </div>
+                        </xsl:when>
+                        <xsl:when test="self::comment()">
+                             <xsl:value-of select="."/>
+                        </xsl:when>
                         <xsl:otherwise>
                             <xsl:for-each select="tokenize(.,'\n')">
                                 <xsl:value-of select="."/>
@@ -70,10 +90,10 @@
                 </div>
             </div>
             <div class="childNodesWrapper">
-                <xsl:apply-templates select="*|text()[normalize-space(.) != '']"/>
+                <xsl:apply-templates select="*|text()[normalize-space(.) != '']|processing-instruction()|comment()"/>
             </div>
         </div>
-        <xsl:if test="following-sibling::* or following-sibling::text()[normalize-space(.) != '']">
+        <xsl:if test="following-sibling::* or following-sibling::text()[normalize-space(.) != ''] or following-sibling::processing-instruction() or following-sibling::comment()">
             <div class="nodeDelimiter"/>
         </xsl:if>
     </xsl:template>
