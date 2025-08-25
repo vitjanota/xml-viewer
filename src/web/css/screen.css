@@ -48,7 +48,6 @@ textarea {
 .Group .GroupContent {
   display: flex;
   justify-content: left;
-  width: 1108px;
   background-color: #ffffff;
   padding: 10px 20px 20px 20px;
   border-radius: 12px;
