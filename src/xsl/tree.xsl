@@ -17,6 +17,7 @@
         <div class="nodeArea">
             <div>
                 <xsl:attribute name="class">
+                    <!-- set correct styling for particular tree component -->
                     <xsl:choose>
                         <xsl:when test="not(ancestor::*)">
                             <xsl:text>rootNodeWrapper</xsl:text>
@@ -37,6 +38,7 @@
                 </xsl:attribute>
                 <div>
                     <xsl:attribute name="class">
+                        <!-- set correct styling for particular node type -->
                         <xsl:choose>
                             <xsl:when test="self::*">
                                 <xsl:text>elementNode</xsl:text>
@@ -53,6 +55,7 @@
                         </xsl:choose>
                     </xsl:attribute>
                     <xsl:choose>
+                        <!-- display node content correctly -->
                         <xsl:when test="self::*">
                             <div class="elementNodeName">
                                 <xsl:value-of select="name()"/>
@@ -61,7 +64,10 @@
                                 <xsl:for-each select="@*">
                                     <div>
                                         <xsl:value-of select="concat(name(),': ')"/>
-                                        <i><xsl:value-of select="."/></i>
+                                        <xsl:for-each select="tokenize(.,'\n')">
+                                            <i><xsl:value-of select="."/></i>
+                                            <br/>
+                                        </xsl:for-each>
                                     </div>
                                 </xsl:for-each>
                             </div>
