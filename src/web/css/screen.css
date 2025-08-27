@@ -78,31 +78,55 @@ footer {
   margin: 0 10px 0 0;
 }
 
+.standaloneRootNodeWrapper {
+  padding: 0 0 0 0;
+}
+
+.singleChildRootNodeWrapper {
+  padding: 0 0 0 0;
+}
+
 .rootNodeWrapper {
   border-top: 1px solid black;
   padding: 0 10px 0 0;
 }
 
+.emptyNodeWrapper {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  padding: 0 0 0 10px;
+}
+
+.oneChildNodeWrapper {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  padding: 0 0 0 10px;
+}
+
+.nodeWrapper {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  padding: 0 10px 0 10px;
+}
+
+.emptyLastNodeWrapper {
+  border-top: 1px solid black;
+  padding: 0 0 0 10px;
+}
+
+.oneChildLastNodeWrapper {
+  border-top: 1px solid black;
+  padding: 0 0 0 10px;
+}
+
+.emptyNodeWrapper {
+  border-top: 1px solid black;
+  padding: 0 0 0 10px;
+}
+
 .generalNodeWrapper {
   border-top: 1px solid black;
   padding: 0 10px 0 10px;
-}
-
-.lastNodeWrapper {
-  border-left: 1px solid black;
-  border-top: 1px solid black;
-  padding: 0 10px 0 10px;
-}
-
-.lastLeafNodeWrapper {
-  border-left: 1px solid black;
-  border-top: 1px solid black;
-  padding: 0 0 0 10px;
-}
-
-.leafNodeWrapper {
-  border-top: 1px solid black;
-  padding: 0 0 0 10px;
 }
 
 .elementNode {

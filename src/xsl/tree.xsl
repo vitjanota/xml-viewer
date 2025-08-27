@@ -19,17 +19,32 @@
                 <xsl:attribute name="class">
                     <!-- set correct styling for particular tree component -->
                     <xsl:choose>
+                        <xsl:when test="not(ancestor::*) and not(* or text()[normalize-space(.) != ''] or processing-instruction() or comment())">
+                            <xsl:text>standaloneRootNodeWrapper</xsl:text>
+                        </xsl:when>
+                         <xsl:when test="not(ancestor::*) and count(child::*|child::comment()|child::processing-instruction()|child::text()[normalize-space(.) != '']) = 1">
+                            <xsl:text>singChildRootNodeWrapper</xsl:text>
+                        </xsl:when>
                         <xsl:when test="not(ancestor::*)">
                             <xsl:text>rootNodeWrapper</xsl:text>
                         </xsl:when>
-                        <xsl:when test="(following-sibling::* or following-sibling::text()[normalize-space(.) != ''] or following-sibling::processing-instruction() or following-sibling::comment()) and not(*)">
-                            <xsl:text>lastLeafNodeWrapper</xsl:text>
+                        <xsl:when test="(following-sibling::* or following-sibling::text()[normalize-space(.) != ''] or following-sibling::processing-instruction() or following-sibling::comment()) and not(* or text()[normalize-space(.) != ''] or processing-instruction() or comment())">
+                            <xsl:text>emptyNodeWrapper</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="(following-sibling::* or following-sibling::text()[normalize-space(.) != ''] or following-sibling::processing-instruction() or following-sibling::comment()) and count(child::*|child::comment()|child::processing-instruction()|child::text()[normalize-space(.) != '']) = 1">
+                            <xsl:text>oneChildNodeWrapper</xsl:text>
                         </xsl:when>
                         <xsl:when test="following-sibling::* or following-sibling::text()[normalize-space(.) != ''] or following-sibling::processing-instruction() or following-sibling::comment()">
-                            <xsl:text>lastNodeWrapper</xsl:text>
+                            <xsl:text>nodeWrapper</xsl:text>
                         </xsl:when>
-                        <xsl:when test="not(*)">
-                            <xsl:text>leafNodeWrapper</xsl:text>
+                        <xsl:when test="not(following-sibling::* or following-sibling::text()[normalize-space(.) != ''] or following-sibling::processing-instruction() or following-sibling::comment()) and not(* or text()[normalize-space(.) != ''] or processing-instruction() or comment())">
+                            <xsl:text>emptyLastNodeWrapper</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="not(following-sibling::* or following-sibling::text()[normalize-space(.) != ''] or following-sibling::processing-instruction() or following-sibling::comment()) and count(child::*|child::comment()|child::processing-instruction()|child::text()[normalize-space(.) != '']) = 1">
+                            <xsl:text>oneChildLastNodeWrapper</xsl:text>
+                        </xsl:when>
+                        <xsl:when test="not(* or text()[normalize-space(.) != ''] or processing-instruction() or comment())">
+                            <xsl:text>emptyNodeWrapper</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:text>generalNodeWrapper</xsl:text>
